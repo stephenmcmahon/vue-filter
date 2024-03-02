@@ -1,6 +1,6 @@
 # filter
 
-This template should help get you started developing with Vue 3 in Vite.
+This template used for a Vue filter.
 
 ## Recommended IDE Setup
 
