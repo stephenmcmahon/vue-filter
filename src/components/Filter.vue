@@ -14,21 +14,21 @@
     { type: "simple", id: 5, sku: "s1", title: "Product 5", regular_price: { currency: "USD", value: 54.23 }, image: "/images/1.png", brand: 3 },
     { type: "simple", id: 6, sku: "s1", title: "Product 6", regular_price: { currency: "USD", value: 60.99 }, image: "/images/1.png", brand: 3 }
   ])
-  const filteredBrand = ref(null)
+  const filteredBrand = ref(false)
   const filteredItems = computed(() => {
     return filteredBrand.value ? items.value.filter(item => item.brand === filteredBrand.value) : items.value
   })
-  const filterByBrand = (brand = null) => {
+  const filterByBrand = (brand = false) => {
     filteredBrand.value = brand
   }
   const isActive = ref(false)
   const toggleExpand = (el) => {
-    isActive.value = el
+    if (isActive.value === el) {
+      isActive.value = false
+    } else {
+      isActive.value = el
+    }
   }
-  // const expandBox = id => {
-  //   filteredItems.value = filteredItems.value.map(filterItem => filterItem.isOpen && filterItem.id !== id ? {...filterItem, isOpen: false} : filterItem)
-  //   filteredItems.value = filteredItems.value.map(filterItem => filterItem.id === id ? {...filterItem, isOpen: !filterItem.isOpen} : filterItem)
-  // }
 </script>
 
 <template>
