@@ -7,7 +7,7 @@
     <div class="product-info">
       <div class="product-title">{{ filterItem.title }}</div>
       <div class="product-brand">{{ filterItem.brand }}</div>
-      <img alt="Product Image" src="../assets/product.jpg" class="product-img">
+      <img alt="Product Image" src="../assets/product.jpg" />
       <div class="product-price">${{ filterItem.regular_price.value }}</div>
     </div>
     <div class="cart-btn"> 
@@ -19,7 +19,8 @@
 <style lang="less">
   .filter-item {
     width: 200px;
-    height: 200px;
+    min-width: 200px;
+    min-height: 200px;
     margin: 1rem;
     padding: 1rem;
     border-radius: 10px;
@@ -35,6 +36,12 @@
       cursor: default;
       .cart-btn {
         opacity: 1;
+      }
+    }
+    .product-info {
+      img {
+        width: 75px;
+        margin: 0 auto;
       }
     }
     .cart-btn {

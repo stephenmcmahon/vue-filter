@@ -7,12 +7,12 @@
     { id: 3, title: "Brand 3", sort: "300", code: "brand_3" }
   ])
   const items = ref([
-    { type: "simple", id: 1, sku: "s1", title: "Product 1", regular_price: { currency: "USD", value: 27.12 }, image: "/images/1.png", brand: 1 },
-    { type: "simple", id: 2, sku: "s1", title: "Product 2", regular_price: { currency: "USD", value: 37.88 }, image: "/images/1.png", brand: 2 },
-    { type: "simple", id: 3, sku: "s1", title: "Product 3", regular_price: { currency: "USD", value: 39.77 }, image: "/images/1.png", brand: 2 },
-    { type: "simple", id: 4, sku: "s1", title: "Product 4", regular_price: { currency: "USD", value: 42.77 }, image: "/images/1.png", brand: 3 },
-    { type: "simple", id: 5, sku: "s1", title: "Product 5", regular_price: { currency: "USD", value: 54.23 }, image: "/images/1.png", brand: 3 },
-    { type: "simple", id: 6, sku: "s1", title: "Product 6", regular_price: { currency: "USD", value: 60.99 }, image: "/images/1.png", brand: 3 }
+    { type: "simple", id: 1, sku: "s1", title: "Product 1", regular_price: { currency: "USD", value: 27.12 }, image: "product.jpg", brand: 1 },
+    { type: "simple", id: 2, sku: "s1", title: "Product 2", regular_price: { currency: "USD", value: 37.88 }, image: "product.jpg", brand: 2 },
+    { type: "simple", id: 3, sku: "s1", title: "Product 3", regular_price: { currency: "USD", value: 39.77 }, image: "product.jpg", brand: 2 },
+    { type: "simple", id: 4, sku: "s1", title: "Product 4", regular_price: { currency: "USD", value: 42.77 }, image: "product.jpg", brand: 3 },
+    { type: "simple", id: 5, sku: "s1", title: "Product 5", regular_price: { currency: "USD", value: 54.23 }, image: "product.jpg", brand: 3 },
+    { type: "simple", id: 6, sku: "s1", title: "Product 6", regular_price: { currency: "USD", value: 60.99 }, image: "product.jpg", brand: 3 }
   ])
   const filteredBrand = ref(false)
   const filteredItems = computed(() => {
