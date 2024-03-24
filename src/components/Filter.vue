@@ -55,10 +55,10 @@
       <span @click="filterByBrand()"> All brands</span>
       <div class="filter-btn" v-for="(item, id) in brand" :key="id" @click="filterByBrand(item.id)">{{ item.title }}</div>
       <div class="range-slider">
+        <p>Min: ${{ minPrice }}</p>
         <input type="range" v-model="minPrice" min="0" max="300" step="1">
+        <p>Max: ${{ maxPrice }}</p>
         <input type="range" v-model="maxPrice" min="0" max="300" step="1">
-        <span>Min: ${{ minPrice }}</span>
-        <span>Max: ${{ maxPrice }}</span>
       </div>
     </div>
     <div class="products-wrap">
@@ -90,18 +90,15 @@
       padding: 2rem;
       text-align: center;
       span {
-        color: var(--color-background);
         transition: all 0.25s ease-in-out;
         cursor: pointer;
-        &:hover {
-          color: var(--color-background-mute);
-        }
       }
       .filter-btn {
         margin: 10px 0;
         padding: 5px;
         border-radius: 8px;
         background: linear-gradient(145deg, #ffffff, #aaaaaa);
+        color: var(--vt-c-text-light-2);
         transition: all 0.25s ease-in-out;
         cursor: pointer;
         &:hover {
