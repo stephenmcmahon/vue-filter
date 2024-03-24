@@ -23,9 +23,18 @@
     { type: "Microsoft", id: 11, sku: "s1", title: "Essential oil diffuser with LED lights", regular_price: { currency: "USD", value: 154.23 }, image: "product.jpg", brand: 6 },
     { type: "Microsoft", id: 12, sku: "s1", title: "Handheld milk frother for coffee beverages", regular_price: { currency: "USD", value: 260.99 }, image: "product.jpg", brand: 6 }
   ])
+
+  const minPrice = ref(0)
+  const maxPrice = ref(300)
+
   const filteredBrand = ref(false)
   const filteredItems = computed(() => {
-    return filteredBrand.value ? items.value.filter(item => item.brand === filteredBrand.value) : items.value
+    let filtered = items.value
+    if (filteredBrand.value) {
+      filtered = filtered.filter(item => item.brand === filteredBrand.value)
+    }
+    filtered = filtered.filter(item => item.regular_price.value >= minPrice.value && item.regular_price.value <= maxPrice.value)
+    return filtered
   })
   const filterByBrand = (brand = false) => {
     filteredBrand.value = brand
@@ -45,6 +54,12 @@
     <div class="nav">
       <span @click="filterByBrand()"> All brands</span>
       <div class="filter-btn" v-for="(item, id) in brand" :key="id" @click="filterByBrand(item.id)">{{ item.title }}</div>
+      <div class="range-slider">
+        <input type="range" v-model="minPrice" min="0" max="300" step="1">
+        <input type="range" v-model="maxPrice" min="0" max="300" step="1">
+        <span>Min: ${{ minPrice }}</span>
+        <span>Max: ${{ maxPrice }}</span>
+      </div>
     </div>
     <div class="products-wrap">
       <div class="products-row">
